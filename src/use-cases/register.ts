@@ -1,4 +1,3 @@
-import { prisma } from "@/lib/prisma"
 import { UserRepository } from "@/repositories/users-repository"
 import { hash } from "bcryptjs"
 import { UserAlreadyExistError } from "./errors/user-already-exist"
@@ -32,6 +31,8 @@ export class RegisterUseCase {
             password_hash,
         })
 
-        return { user, }
+        return {
+            user,
+        }
     }
 }
